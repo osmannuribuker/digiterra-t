@@ -1,6 +1,6 @@
-# Digiterra Task
+# Digiterra-t
 
-Digiterra Task is a made to use the Connio API' s with Python and to connect with `mqtt` and write data to devices..
+Digiterra-t is a made to use the Connio API' s with Python and to connect with `mqtt` and write data to devices..
 
 ## Installation
 
