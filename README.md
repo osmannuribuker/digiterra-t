@@ -14,7 +14,7 @@ Create a virtual environment with `python3-venv` after active this.
 
 ```bash
 python3 -m venv <venv_name>
-source venv/bin/activate
+source <venv-name>/bin/activate
 ```
 
 Use the package manager [pip3](https://pip.pypa.io/en/stable/) to install `requirements.txt`.
