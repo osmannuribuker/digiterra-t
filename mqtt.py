@@ -99,13 +99,15 @@ class AsyncMqtt:
                 data = json.dumps(feed)
                 print(OKGREEN + f'[+] Publising: '+ data + ENDC)
                 self.client.publish(self.publish_topic, data, qos=1)
-            else:
+            elif self.type == 'subscribe':
                 await asyncio.sleep(5)
                 self.got_message = self.loop.create_future()
                 msg = await self.got_message
                 print(OKGREEN + BOLD + '[+] Subscribe result for {} value: '.format(self.property)+ str(msg, 'utf-8') + ENDC)
                 self.got_message = None
-
+            else:
+                self.client.disconnect()
+                print(OKGREEN + '[-] WRONG TYPE! Disconnected: {}'.format(await self.disconnected) + ENDC)
 
         self.client.disconnect()
         print(OKGREEN + '[-] Disconnected: {}'.format(await self.disconnected) + ENDC)

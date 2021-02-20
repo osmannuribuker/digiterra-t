@@ -275,7 +275,7 @@ def create_environment():
 
 
 def connect_via_mqtt():
-    print(OKGREEN + f'[+] Starting for xx...' + ENDC)
+    print(OKGREEN + f'[+] mqtt connection is starting...' + ENDC)
     global loop
     loop = asyncio.get_event_loop()
     # To subscribe
@@ -287,7 +287,7 @@ def connect_via_mqtt():
     connections = [AsyncMqtt(loop, broker, device['name'], device['type'], topic).main() for device in devices]
     loop.run_until_complete(asyncio.gather(*connections))
     loop.close()
-    print(OKGREEN + f'[+] Finished xx...' + ENDC)
+    print(OKGREEN + f'[+] finished mqtt connection' + ENDC)
 
 if __name__ == '__main__':
     apikeyId = os.environ.get("API_KEY_ID")
